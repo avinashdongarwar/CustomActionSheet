@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,6 @@
             <connections>
                 <outlet property="contentView" destination="mIu-HO-K5s" id="BPn-dd-HIJ"/>
                 <outlet property="contentViewBottomConstraint" destination="0Rs-dn-3N8" id="vcB-c9-xLv"/>
-                <outlet property="contentViewHeight" destination="FcK-zS-Prb" id="psj-80-JJx"/>
                 <outlet property="view" destination="zNN-qO-LMF" id="mN9-f0-PEq"/>
             </connections>
         </placeholder>
@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="696" width="414" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="FcK-zS-Prb"/>
+                        <constraint firstAttribute="height" constant="200" placeholder="YES" id="FcK-zS-Prb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CId-v9-pGo">

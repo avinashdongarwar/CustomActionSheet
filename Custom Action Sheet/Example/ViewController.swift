@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBAction func presentBottomSheet(_ sender: Any) {
+    @IBAction func presentBottomSheet(_ sender: UIButton!) {
 
         let exampleViewController = ExampleViewController()
 
@@ -27,3 +27,30 @@ class ViewController: UIViewController {
         presentCustomActionSheet(sheetViewController, completion: nil)
     }
 }
+
+
+class RoundedCornersButton: UIButton {
+
+    @IBInspectable
+    var cornerRadius: CGFloat = 0.0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = true
+        }
+    }
+
+    @IBInspectable
+    var borderWidth: CGFloat = 1.0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+
+    @IBInspectable
+    var borderColor: UIColor = .black {
+        didSet {
+            layer.borderColor = borderColor.cgColor
+        }
+    }
+}
+

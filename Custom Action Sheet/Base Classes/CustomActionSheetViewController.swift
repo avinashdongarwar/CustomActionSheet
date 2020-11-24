@@ -17,7 +17,6 @@ public protocol CustomActionSheetPresentable {
 public class CustomActionSheetViewController: UIViewController {
     @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var contentViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak private var contentViewHeight: NSLayoutConstraint!
 
     private let viewModel: CustomActionSheetPresentable
     private let childViewController: UIViewController
@@ -55,14 +54,6 @@ public class CustomActionSheetViewController: UIViewController {
 
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        if let tableView = containsTableView() {
-            contentViewHeight.constant = tableView.contentSize.height
-            view.layoutIfNeeded()
-        } else {
-            contentViewHeight.isActive = false
-        }
-
         contentViewBottomConstraint.constant = 0
         UIView.animate(withDuration: viewModel.animationTransitionDuration) {
             self.view.backgroundColor = self.viewModel.backgroundColor
@@ -129,15 +120,6 @@ private extension CustomActionSheetViewController {
             }
             contentView.frame = CGRect(x: 0, y: point.y, width: view.frame.width, height: view.frame.height)
         }
-    }
-
-    private func containsTableView() -> UITableView? {
-        for view in childViewController.view.subviews {
-            if let tableView = view as? UITableView {
-                return tableView
-            }
-        }
-        return nil
     }
 }
 
